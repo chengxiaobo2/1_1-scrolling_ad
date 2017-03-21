@@ -9,6 +9,7 @@ import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -19,7 +20,7 @@ import java.util.List;
  * Created by cheng on 2017/3/21.
  */
 
-public class ScrollAdView extends LinearLayout{
+public class ScrollAdView extends FrameLayout{
 
     private int height;
     private int flag=1;
