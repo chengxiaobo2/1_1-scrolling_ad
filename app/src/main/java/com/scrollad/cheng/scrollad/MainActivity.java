@@ -10,7 +10,9 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    ScrollAdView adView;
+    private ScrollAdView adView;
+    private ScrollWinAPrizeView scrollWinView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +48,39 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        scrollWinView=(ScrollWinAPrizeView)findViewById(R.id.scrollwin);
+        final List<String> listWin=new ArrayList<>();
+        listWin.add("1。中奖了");
+        listWin.add("2。中奖了");
+        listWin.add("3。中奖了");
+        listWin.add("4。中奖了");
+        listWin.add("5。中奖了");
+        listWin.add("6。中奖了");
+        listWin.add("7。中奖了");
+        listWin.add("8。中奖了");
+        listWin.add("9。中奖了");
+        listWin.add("10。中奖了");
+        listWin.add("11。中奖了");
+        listWin.add("12。中奖了");
+        listWin.add("13。中奖了");
+        listWin.add("14。中奖了");
+        listWin.add("15。中奖了");
+        listWin.add("16。中奖了");
 
+        scrollWinView.post(new Runnable() {
+            @Override
+            public void run() {
+
+                scrollWinView.initData(listWin,MainActivity.this);
+            }
+        });
+
+        scrollWinView.setListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Toast.makeText(MainActivity.this, (String)v.getTag(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

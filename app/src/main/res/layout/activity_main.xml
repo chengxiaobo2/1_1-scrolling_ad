@@ -7,13 +7,24 @@ android:layout_height="match_parent"
 android:paddingBottom="@dimen/activity_vertical_margin"
 android:paddingLeft="@dimen/activity_horizontal_margin"
 android:paddingRight="@dimen/activity_horizontal_margin"
-android:paddingTop="100dp"
+android:paddingTop="@dimen/activity_horizontal_margin"
 tools:context="com.scrollad.cheng.scrollad.MainActivity">
 
 <com.scrollad.cheng.scrollad.ScrollAdView
+    android:paddingLeft="5dp"
     android:id="@+id/scrollad"
     android:layout_width="match_parent"
     android:layout_height="40dp"
     android:background="#ff0000"
     android:orientation="vertical"/>
+    
+    <com.scrollad.cheng.scrollad.ScrollWinAPrizeView
+        android:paddingLeft="5dp"
+        android:layout_below="@+id/scrollad"
+        android:id="@+id/scrollwin"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="#FFCCCC"
+        android:layout_marginTop="40dp">
+    </com.scrollad.cheng.scrollad.ScrollWinAPrizeView>
 </RelativeLayout>
