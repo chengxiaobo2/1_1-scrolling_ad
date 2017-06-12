@@ -83,4 +83,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        scrollWinView.cancelAnimation();;
+        adView.cancelAnimation();
+    }
 }

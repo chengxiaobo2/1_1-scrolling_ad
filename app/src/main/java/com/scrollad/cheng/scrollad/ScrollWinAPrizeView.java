@@ -27,6 +27,7 @@ public class ScrollWinAPrizeView extends FrameLayout{
     private List<String> stringList;
     private Activity activity;
     private LinearLayout linearLayoutContent;
+    private  ObjectAnimator animator;
 
     private OnClickListener listener=null;
 
@@ -132,8 +133,8 @@ public class ScrollWinAPrizeView extends FrameLayout{
         //方法1====end====
 
         //方法2===start====
-        ObjectAnimator animator = ObjectAnimator.ofFloat(linearLayoutContent,"translationY",0,-height/4);
-        animator.setDuration(2000);
+        animator = ObjectAnimator.ofFloat(linearLayoutContent,"translationY",0,-height/4);
+        animator.setDuration(1000);
         animator.setInterpolator(new LinearInterpolator());
         animator.setRepeatMode(ValueAnimator.RESTART);
         animator.setRepeatCount(ObjectAnimator.INFINITE);
@@ -179,6 +180,11 @@ public class ScrollWinAPrizeView extends FrameLayout{
 
       //方法2===end====
 
+    }
+
+    public void cancelAnimation()
+    {
+        animator.cancel();
     }
 
 }
